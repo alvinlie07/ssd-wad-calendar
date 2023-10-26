@@ -17,11 +17,152 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #000;
+  background: #f4c2c2;
+}
+
+.__title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.__container {
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.__day {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 47px;
+  text-align: center;
+}
+
+.__date-container-4 {
+  height: calc(100% - 27px - 40px);
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  cursor: pointer;
+}
+.__date-container-5 {
+  height: calc(100% - 27px - 40px);
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  cursor: pointer;
+}
+
+.__date-body {
+  border: 1px solid white;
+}
+
+h2 {
+  color: #000;
+}
+
+.__dialog-btn-close {
+  background-color: #f4c2c2;
+  padding: 5px;
+  margin: 40px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.__dialog-action-btn-close {
+  background-color: #f4c2c2;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.__dialog-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.__dialog-action-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.__dialog-btn-add {
+  background-color: #89cff0;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.__btn-edit{
+  background-color: #89cff0;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.__dialog-btn-edit {
+  background-color: #fff;
+  padding: 5px;
+  margin: 10px;
+  color: #f4c2c2;
+  border: 1px solid #f4c2c2;
+  border-radius: 5px;
+}
+.__dialog-title{
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.__dialog-btn-delete {
+  background-color: #ff7779;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.__dialog-wrapper {
+  background: white;
+  position: absolute;
+  width: 60%;
+  top: 50%;
+  left: 50%;
+  border-radius: 6px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+.__dialog-wrapper-2 {
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  align-content: center;
+  border-radius: 6px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.__date-title {
+  text-align: start;
+}
+
+.__event.-card {
+  font-size: 12px;
+  border: 1px solid white;
+  background-color: #89cff0;
+}
+.__x-button{
+  line-height: 12px;
+     padding: 40px;
+     font-family: tahoma;
+     margin-top: 1px;
+     margin-right: 2px;
+     position:absolute;
+     top:0;
+     right:0;
 }
