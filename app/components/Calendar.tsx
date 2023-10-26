@@ -21,7 +21,7 @@ const Calendar = ({
   // const [listEvents, setListEvents] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showAddForm, setshowAddForm] = useState(false);
-  // const [isEdit, setIsEdit] = useState('');
+  const [isEditVal, setIsEditVal] = useState(false);
 
   const [isDelete, setIsDelete] = useState(false);
   const [dataEvent, setDataEvent] = useState<eventOnCalendar>();
@@ -32,10 +32,11 @@ const Calendar = ({
 
   // console.log(listEvents)
   const selectedDateFn = (a: Date) => {
-    //TODO - save, edit, delete event
     setSelectedDate(a.toString());
+    
     localStorage.setItem('idEvent', '')
     setIsDelete(false);
+    // setIsEditVal(false);
     if (!isDelete) {
       openFormModal();
     }
@@ -97,11 +98,12 @@ const Calendar = ({
     //setDataEvent(event);
   };
 
-  const handleEditEvent = (a: Date, event: any) => {
+  const handleEditEvent = (a: Date, event: eventOnCalendar) => {
     // state.isEdit = event.id;
     localStorage.setItem("idEvent", event.id);
     setSelectedDate(a.toString());
     setDataEvent(event);
+    // setIsEditVal(true);
     setIsDelete(false);
     if (!isDelete) {
       openFormModal();
@@ -118,6 +120,9 @@ const Calendar = ({
   return (
     <>
       <main className="__container p-5">
+      <div className="__title">
+          {exportedConstant.initialMonth(currentMonth) + " " + currentYear}
+        </div>
         <div className="__day">
           {exportedConstant.dayName.map((day) => (
             <div className="m-5" key={day}>
@@ -156,12 +161,12 @@ const Calendar = ({
                       >
                         Hapus
                       </button>
-                      <button
+                      {/* <button
                         className="__btn-edit"
                         onClick={() => handleEditEvent(date, event)}
                       >
                         Update
-                      </button>
+                      </button> */}
                     </div>
                   );
                 }

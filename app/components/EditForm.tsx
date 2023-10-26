@@ -2,10 +2,12 @@ import exportedFn from "../helpers/functions";
 import { eventOnCalendar } from "../helpers/utils";
 
 const AddForm = ({
+  id,
   selectedDate,
   handleClose,
   closeModal,
 }: {
+  id?:string;
   selectedDate: string;
   closeModal: Function;
   handleClose: Function;
@@ -33,6 +35,7 @@ const AddForm = ({
     } else {
       state.email = fieldValue;
     }
+    console.log('id in addform',id);
     // console.log(state.name, state.time, state.email);
     // setFormData((prevState: any) => ({
     //   ...prevState,
@@ -103,9 +106,9 @@ const AddForm = ({
       <button
         className="__dialog-btn __dialog-btn-close"
         type="submit"
-        onClick={() => handleClose(state)}
+        onClick={() => handleClose(state, id)}
       >
-        {localStorage.getItem('idEvent') != '' ? 'Ubah' : 'Tambah'}
+        {id != '' ? 'Ubah' : 'Tambah'}
       </button>
     </div>
   );

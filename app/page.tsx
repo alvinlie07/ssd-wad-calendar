@@ -60,12 +60,13 @@ export default function Home() {
     
     const updatedEvents = [...events].filter((ev) => ev.id !== id)
     // const updatedEvents = [...events].find((e) => e.id == id)
-    // console.log(updatedEvents)
+    console.log(updatedEvents)
     setEvents(updatedEvents)
     localStorage.setItem("events", JSON.stringify(updatedEvents));
   };
   const editEvent = (params: eventOnCalendar) => {
-    let updatedEvents = [...events].map((e) => {
+    let updatedEvents = events.map(e => {
+      console.log(e, e.id == params.id, params.id)
       if(e.id == params.id){
         e.email = params.email;
         e.name = params.name;
